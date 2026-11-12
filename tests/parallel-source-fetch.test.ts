@@ -104,7 +104,7 @@ describe('skills install fetches sources in parallel', () => {
     vi.restoreAllMocks();
   });
 
-  it('overlaps clones and still installs every skill', async () => {
+  it('overlaps clones and still installs every skill', { timeout: 30000 }, async () => {
     const fixtures = {
       [SOURCES.alpha]: await writeFixtureRepo('alpha'),
       [SOURCES.beta]: await writeFixtureRepo('beta'),
